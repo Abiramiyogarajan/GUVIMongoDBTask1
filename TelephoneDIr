@@ -1,0 +1,50 @@
+!pip install dnspython
+!pip install pymongo[srv]
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["DBTele"]
+
+mycol = mydb["TelephoneDir"]
+
+ db.TelephoneDir.insert(  
+       {  
+         Name: "Alexander",  
+         Address:"Np:6,KKK Nagar, chennai",
+         Mobile No:89654721,
+         pincode:600025    
+       }  
+    )  
+    
+    db.TelephoneDir.find()
+    
+    db.TelephoneDir.insertMany([  
+       {  
+         Name: "John",  
+         Address:"8,tk road,Trichy",
+         Mobile No:7542361,
+         pincode:600088    
+       } ,
+{  
+         Name: "Rojer",  
+         Address:"5,diano nagar, chennai",
+         Mobile No:456783,
+         pincode:600105    
+       } ,
+    
+    {  
+         Name: "Rio",  
+         Address:"No:4,waltax road, chennai",
+         Mobile No:89654721,
+         pincode:600025    
+       } 
+
+
+]
+    )  
+    
+    
+    db.TelephoneDir.updateOne({Name:"Rojer"},{$set:{Mobile No:8889999}})
+    
+    db.TelephoneDir.deleteOne({Name:"Rojer"})
